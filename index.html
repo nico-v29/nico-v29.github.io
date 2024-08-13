@@ -13,7 +13,8 @@
         <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
         <div class="output">
             <font face="Courier New" size="2">
-                <font color="#40E0D0">SELECT</font>&nbsp;<font color="#40E0D0">TOP</font>&nbsp;<font color="#DFFF00">1</font>
+                <font color="#40E0D0">SELECT</font>&nbsp;<font color="#40E0D0">TOP</font>&nbsp;<font color="#DFFF00">1
+                </font>
                 <br>
                 &nbsp;&nbsp;&nbsp;
                 <font color="#FFBF00">S</font><font color="silver">.</font><font color="#FFBF00">positivemessage</font>
@@ -27,14 +28,46 @@
                 <font color="40E0D0">WHERE</font>
                 <br>
                 &nbsp;&nbsp;&nbsp;
-                <font color="FFBF00">S</font><font color="silver">.</font><font color="FFBF00">occasion</font>&nbsp;<font color="40E0D0">LIKE</font><font color="red">
+                <font color="FFBF00">S</font><font color="silver">.</font><font color="FFBF00">occasion</font>&nbsp;<font color="40E0D0">LIKE</font>
+                <font color="red">
                     'Birthday'</font>&nbsp;
             </font>
-
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-            <p class="loading">█████████████████████████████ 100%</p>
-            <div id='greeting'>Happy Birthday! May your code always compile without errors!</div>
+
+
+
+            <br>
+            <br>
+            <div id="myProgress">
+                <div id="myBar">1%</div>
+            </div>
+            <br>
+
+            <div id='greeting' style='display:none'>Happy Birthday! May your code always compile without errors!</div>
+
             <script>
+                var i = 0;
+                function move() {
+                    if (i == 0) {
+                        i = 1;
+                        var elem = document.getElementById("myBar");
+                        var width = 1;
+                        var id = setInterval(frame, 100);
+                        function frame() {
+                            if (width >= 100) {
+                                clearInterval(id);
+                                i = 0;
+                                document.getElementById('greeting').style.display = 'block';
+                                setInterval(change, 3000);
+                            } else {
+                                width++;
+                                elem.style.width = width + "%";
+                                elem.innerHTML = width + "%";
+                            }
+                        }
+                    }
+                }
+
                 var text = [
                     "Wishing you a bug-free year filled with successful builds and optimized algorithms!",
                     "May your birthday be filled with as much joy as finding that one missing semicolon!",
@@ -83,10 +116,11 @@
                     "Happy Birthday! May your stack never overflow and your buffers never underrun!",
                     "Wishing you a birthday that's as exciting as launching your first app!",
                     "May your birthday be as unforgettable as your favorite line of code!"];
+
                 var counter = 0;
                 var elem = $("#greeting");
-                setInterval(change, 3000);
                 function change() {
+
                     elem.fadeOut(function () {
                         elem.html(text[counter]);
                         counter++;
@@ -94,7 +128,11 @@
                         elem.fadeIn();
                     });
                 }
+
+                window.onload = move;
             </script>
+
+
         </div>
     </div>
 </body>
