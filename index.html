@@ -122,9 +122,8 @@
                 function change() {
 
                     elem.fadeOut(function () {
-                        elem.html(text[counter]);
-                        counter++;
-                        if (counter >= text.length) { counter = 0; }
+                        const randomIndex = Math.floor(Math.random() * text.length);
+                        elem.html(text[randomIndex]);
                         elem.fadeIn();
                     });
                 }
