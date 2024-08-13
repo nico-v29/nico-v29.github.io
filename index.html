@@ -12,14 +12,23 @@
     <div class="terminal">
         <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
         <div class="output">
-            <pre class="prettyprint">
-                SELECT TOP 1
-                    S.PositiveMessage
-                FROM
-                    dbo.Sentiments AS S
-                WHERE
-                    S.Occasion LIKE 'Birthday'
-                </pre>
+            <font face="Courier New" size="2">
+                <font color="blue">SELECT</font>&nbsp;<font color="blue">TOP</font>&nbsp;<font color="black">1</font>
+                &nbsp;<font color="maroon">S</font>
+                <font color="silver">.</font>
+                <font color="maroon">positivemessage</font>
+                <br />
+                <font color="blue">FROM</font>&nbsp;&nbsp;&nbsp;<font color="maroon">dbo</font>
+                <font color="silver">.</font>
+                <font color="maroon">sentiments</font>&nbsp;<font color="blue">AS</font>&nbsp;<font color="maroon">S
+                </font>
+                <br />
+                <font color="blue">WHERE</font>&nbsp;&nbsp;<font color="maroon">S</font>
+                <font color="silver">.</font>
+                <font color="maroon">occasion</font>&nbsp;<font color="blue">LIKE</font>&nbsp;<font color="red">
+                    'Birthday'</font>&nbsp;
+            </font>
+
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
             <p class="loading">█████████████████████████████ 100%</p>
             <div id='greeting'>Happy Birthday! May your code always compile without errors!</div>
