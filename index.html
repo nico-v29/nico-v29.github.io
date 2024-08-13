@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Nico v0.29</title>
+</head>
+
+<body>
+    <script>
+        var text = ["Hola", "Hallo", "Merhaba"];
+        var counter = 0;
+        var elem = $("#greeting");
+        setInterval(change, 3000);
+        function change() {
+            elem.fadeOut(function () {
+                elem.html(text[counter]);
+                counter++;
+                if (counter >= text.length) { counter = 0; }
+                elem.fadeIn();
+            });
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <div id='greeting'>Hello<div>
+</body>
+
+</html>
