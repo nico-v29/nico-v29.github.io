@@ -1,27 +1,140 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>Nico v0.29</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, [Name]!</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <div id='greeting'>Hello</div>
-    <script>
-        var text = ["Hola", "Hallo", "Merhaba"];
-        var counter = 0;
-        var elem = $("#greeting");
-        setInterval(change, 3000);
-        function change() {
-            elem.fadeOut(function () {
-                elem.html(text[counter]);
-                counter++;
-                if (counter >= text.length) { counter = 0; }
-                elem.fadeIn();
-            });
-        }
-    </script>
+    <div class="terminal">
+        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+        <div class="output">
+            <font face="Courier New" size="2">
+                <font color="#40E0D0">SELECT</font>&nbsp;<font color="#40E0D0">TOP</font>&nbsp;<font color="#DFFF00">1
+                </font>
+                <br>
+                &nbsp;&nbsp;&nbsp;
+                <font color="#FFBF00">S</font><font color="silver">.</font><font color="#FFBF00">positivemessage</font>
+                <br />
+                <font color="40E0D0">FROM</font>
+                <br>
+                &nbsp;&nbsp;&nbsp;
+                <font color="FFBF00">dbo</font><font color="silver">.</font><font color="FFBF00">sentiments</font>&nbsp;<font color="40E0D0">AS</font>&nbsp;<font color="FFBF00">S
+                </font>
+                <br />
+                <font color="40E0D0">WHERE</font>
+                <br>
+                &nbsp;&nbsp;&nbsp;
+                <font color="FFBF00">S</font><font color="silver">.</font><font color="FFBF00">occasion</font>&nbsp;<font color="40E0D0">LIKE</font>
+                <font color="red">
+                    'Birthday'</font>&nbsp;
+            </font>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+
+            <br>
+            <br>
+            <div id="myProgress">
+                <div id="myBar">1%</div>
+            </div>
+            <br>
+
+            <div id='greeting' style='display:none'>Happy Birthday! May your code always compile without errors!</div>
+
+            <script>
+                var i = 0;
+                function move() {
+                    if (i == 0) {
+                        i = 1;
+                        var elem = document.getElementById("myBar");
+                        var width = 1;
+                        var id = setInterval(frame, 100);
+                        function frame() {
+                            if (width >= 100) {
+                                clearInterval(id);
+                                i = 0;
+                                document.getElementById('greeting').style.display = 'block';
+                                setInterval(change, 3000);
+                            } else {
+                                width++;
+                                elem.style.width = width + "%";
+                                elem.innerHTML = width + "%";
+                            }
+                        }
+                    }
+                }
+
+                var text = [
+                    "Wishing you a bug-free year filled with successful builds and optimized algorithms!",
+                    "May your birthday be filled with as much joy as finding that one missing semicolon!",
+                    "Happy Birthday! May your life be as efficient as your favorite sorting algorithm!",
+                    "Wishing you a day where all your functions return true and your loops run infinite with joy!",
+                    "May your birthday be a perfect O(1) in the time complexity of life!",
+                    "Happy Birthday! Here’s to another year of pushing to master and merging success!",
+                    "May your birthday be as satisfying as a perfectly executed binary search!",
+                    "Wishing you a day as dynamic as your favorite programming language!",
+                    "Happy Birthday! May your memory be as sharp as your RAM and your life as colorful as RGB!",
+                    "May your birthday be full of scalable joys and minimal latency!",
+                    "Happy Birthday! May you never encounter a stack overflow or a null pointer on your special day!",
+                    "Wishing you a year where every project is MVP, and every code review is approved!",
+                    "May your birthday be full of high bandwidth fun and low latency happiness!",
+                    "Happy Birthday! May your life be as balanced as a perfectly balanced binary tree!",
+                    "Wishing you a year of zero bugs and maximum features!",
+                    "Happy Birthday! May your uptime be 100% and your downtime filled with cake!",
+                    "Here’s to another year of avoiding deadlocks and handling exceptions with grace!",
+                    "Wishing you a birthday that's more satisfying than a well-executed refactor!",
+                    "Happy Birthday! May your day be as joyful as an unbreakable loop of happiness!",
+                    "May your birthday be filled with as much excitement as a clean, compiled program!",
+                    "Happy Birthday! Wishing you the perfect balance of work and play, like a beautifully designed algorithm!",
+                    "May your birthday be as joyful as deploying code to production without any bugs!",
+                    "Happy Birthday! May your code be elegant, your systems scalable, and your day filled with joy!",
+                    "Wishing you a year of continuous integration, deployment, and happiness!",
+                    "Happy Birthday! May your life be as well-organized as a perfectly indexed database!",
+                    "May your birthday be more exciting than a new version release!",
+                    "Happy Birthday! May you never encounter a blue screen or a kernel panic today!",
+                    "Wishing you a day as flawless as your favorite algorithm's time complexity!",
+                    "Happy Birthday! May your code always be clean, and your bugs easily fixable!",
+                    "May your birthday be filled with as much excitement as opening a pull request for the first time!",
+                    "Happy Birthday! Wishing you a day with zero runtime errors and infinite joy!",
+                    "May your birthday be as bright as a 4K monitor and as satisfying as a perfectly executed SQL query!",
+                    "Happy Birthday! May your life be filled with as much joy as finding an elegant solution to a tough problem!",
+                    "Wishing you a year where every day feels like a successful compile!",
+                    "Happy Birthday! May your CPU run fast and your code never crash!",
+                    "May your birthday be as sweet as finding a bug on the first try!",
+                    "Happy Birthday! Wishing you a day as optimized as your best code!",
+                    "May your birthday be as satisfying as debugging and fixing a tricky issue!",
+                    "Happy Birthday! May your dreams be as boundless as a recursive function!",
+                    "Wishing you a year where all your loops are optimized and your recursions end happily!",
+                    "Happy Birthday! May your storage be abundant, your code reusable, and your life full of joy!",
+                    "May your birthday be as epic as discovering the perfect data structure for your problem!",
+                    "Happy Birthday! Wishing you a day full of joy, like the feeling of closing all your tabs after a successful code session!",
+                    "May your birthday be as elegant as a well-written algorithm and as fun as a hackathon!",
+                    "Happy Birthday! May your stack never overflow and your buffers never underrun!",
+                    "Wishing you a birthday that's as exciting as launching your first app!",
+                    "May your birthday be as unforgettable as your favorite line of code!"];
+
+                var counter = 0;
+                var elem = $("#greeting");
+                function change() {
+
+                    elem.fadeOut(function () {
+                        elem.html(text[counter]);
+                        counter++;
+                        if (counter >= text.length) { counter = 0; }
+                        elem.fadeIn();
+                    });
+                }
+
+                window.onload = move;
+            </script>
+
+
+        </div>
+    </div>
 </body>
 
 </html>
