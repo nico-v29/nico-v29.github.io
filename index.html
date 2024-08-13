@@ -52,7 +52,7 @@
                         i = 1;
                         var elem = document.getElementById("myBar");
                         var width = 1;
-                        var id = setInterval(frame, 100);
+                        var id = setInterval(frame, 50);
                         function frame() {
                             if (width >= 100) {
                                 clearInterval(id);
@@ -120,7 +120,6 @@
                 var counter = 0;
                 var elem = $("#greeting");
                 function change() {
-
                     elem.fadeOut(function () {
                         const randomIndex = Math.floor(Math.random() * text.length);
                         elem.html(text[randomIndex]);
