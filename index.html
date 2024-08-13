@@ -10,13 +10,16 @@
 
 <body>
     <div class="terminal">
+        <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
         <div class="output">
-            <p>SELECT TOP 1</p>
-            <p> S.PositiveMessage</p>
-            <p>FROM</p>
-            <p> dbo.Sentiments AS S</p>
-            <p>WHERE</p>
-            <p> S.Occasion LIKE 'Birthday'</p>
+            <pre class="prettyprint">
+                SELECT TOP 1
+                    S.PositiveMessage
+                FROM
+                    dbo.Sentiments AS S
+                WHERE
+                    S.Occasion LIKE 'Birthday'
+                </pre>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
             <p class="loading">█████████████████████████████ 100%</p>
             <div id='greeting'>Happy Birthday! May your code always compile without errors!</div>
